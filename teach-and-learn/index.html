@@ -1,0 +1,627 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>API - TeachAndLearn</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="teach-and-learn"
+                  title="API - TeachAndLearn"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Información" duration="0">
+        <h2 is-upgraded>Nombre de la API:</h2>
+<p>TeachAndLearn</p>
+<h2 is-upgraded>Versión de la API:</h2>
+<p>Version 1.0.0</p>
+<h2 is-upgraded>Host de la API:</h2>
+<pre><code>https://api.com/v1
+</code></pre>
+<h2 is-upgraded>Formato de respuesta:</h2>
+<p>Siempre que realices una petición correcta a la API obtendrás un JSON.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad usuario." duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Permite crear un nuevo usuario.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/user
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Post&#34;</p>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{&#39;Content-Type&#39;: &#39;application/json&#39;}
+</code></pre>
+<h2 is-upgraded>Body:</h2>
+<p>Para estudiantes:</p>
+<pre><code>{
+    username: MiNombreDeEjemplo
+    email: EmailEjemplo
+    password: ContraseniaEjemplo
+    typeuser: student
+}
+</code></pre>
+<p>Para profesores:</p>
+<pre><code>{
+    username: MiNombreDeEjemplo
+    email: EmailEjemplo
+    password: ContraseniaEjemplo
+    typeuser: teacher
+}
+</code></pre>
+<h2 is-upgraded>Response</h2>
+<ul>
+<li>201</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;User created&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad iniciar sesión." duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Obtiene la información del usuario con el username.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/auth/signin
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Post&#34;</p>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{   
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+}
+</code></pre>
+<h2 is-upgraded>Body:</h2>
+<p>Para estudiantes:</p>
+<pre><code>{
+    username: MiNombreDeEjemplo
+    password: ContraseniaEjemplo
+    typeuser: student
+}
+</code></pre>
+<p>Para profesores:</p>
+<pre><code>{
+    username: MiNombreDeEjemplo
+    password: ContraseniaEjemplo
+    typeuser: teacher
+}
+</code></pre>
+<h2 is-upgraded>Response</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;token&#34;: &#34;Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MThlYzg0NzcyYzViNzMxZjNhOGEzYmUiLCJpYXQiOjE2MzcyNzE5NTgsImV4cCI6MTYzODQ4MTU1OH0.-HEh4bmz3BlBYB0nXrh-pL0KRxx2ckvakHxSl_fG3BM&#34;
+}
+</code></pre>
+<ul>
+<li>201</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad nueva lección." duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Crea una nueva lección.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/new-lession
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Post&#34;</p>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Body:</h2>
+<pre><code>{
+    lessionname: MiNombreDeEjemplo
+    password: ContraseniaEjemplo
+}
+</code></pre>
+<h2 is-upgraded>Response:</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Lession created&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<aside class="special"><p><strong>Nota:</strong> Solo los profesores podrán agregar una lección. </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad ver lección." duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Obtiene la información de la lección.</p>
+<h2 is-upgraded>URL:</h2>
+<p>Esta es la ruta para ver una nueva lección.</p>
+<pre><code>https://api.com/v1/lession/one/&#34;id_lession&#34;
+</code></pre>
+<aside class="special"><p><strong>Nota:</strong> En &#34;id_lession&#34; debe ir el identificador de la lección que desea ver. </p>
+</aside>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Get&#34;</p>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Response</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad Ver lecciones" duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Obtiene la información de todas las lecciones.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/lession/all&#34;
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Get&#34;</p>
+<h2 is-upgraded>Parameters:</h2>
+<pre><code>{
+    limit: 10
+    pages: 0
+}
+</code></pre>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Response:</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad video" duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Crea una nueva actvidad de video.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/lession/&#34;id_lession&#34;/video
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Post&#34;</p>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Body:</h2>
+<pre><code>{
+    activityname: MiNameActivity
+    linkvideo: URL
+}
+</code></pre>
+<h2 is-upgraded>Response:</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Activity add&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad ver video" duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Obtiene la información de la actividad de video.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/lession/&#34;id_lession&#34;/video/view
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Get&#34;</p>
+<h2 is-upgraded>Parameters:</h2>
+<pre><code>{
+    limit: 1
+    pages: 0
+}
+</code></pre>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Response:</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad cuestionario" duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Crea una nueva nueva actividad de tipo cuestionario.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1lession/&#34;id_lession&#34;/questionnaire
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Post&#34;</p>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Body:</h2>
+<pre><code>{
+    activityname: MiNameActivity
+    question1: ¿Como se escribe verde en ingles?
+    response1: Green
+    question2: ¿Como se escribe amarillo en ingles?
+    response2: Yellow
+    question3: ¿Como se escribe rojo en ingles?
+    response3: Red
+    question4: ¿Como se escribe negro en ingles?
+    response4: Black
+    question5: ¿Como se escribe blanco en ingles?
+    response5: White
+    question6: ¿Como se escribe gris en ingles?
+    response6: Gray
+    question7: ¿Como se escribe anaranjado en ingles?
+    response7: Orange
+    question8: ¿Como se escribe azul en ingles?
+    response8: Blue
+    question9: ¿Como se escribe rosa en ingles?
+    response9: Pink
+    question10: ¿Como se escribe morado en ingles?
+    response10: Purple
+}
+</code></pre>
+<h2 is-upgraded>Response:</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Activity add&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad ver cuestionario" duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Obtiene la información de la actividad cuestionario.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/lession/&#34;id_lession&#34;/questionnaire/view
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Get&#34;</p>
+<h2 is-upgraded>Parameters:</h2>
+<pre><code>{
+    limit: 1
+    pages: 0
+}
+</code></pre>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Response:</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad cuestionario de opción multiple." duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Crea una nueva nueva actividad de tipo cuestionario de opción multiple.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/lession/&#34;id_lession&#34;/multiple_questions
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Post&#34;</p>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Body:</h2>
+<pre><code>{
+    activityname: MiNameActivity
+    question1: ¿Como se escribe anaranjado en ingles?
+    optionresponse1a: Orange
+    optionresponse1b: Red
+    optionresponse1c: Blue
+    optionresponse1d: White
+    question2: ¿Como se escribe azul en ingles?
+    optionresponse2a: Blue
+    optionresponse2b: Black
+    optionresponse2c: yellow
+    optionresponse2d: Green
+    question3: ¿Como se escribe verde en ingles?
+    optionresponse3a: Blue
+    optionresponse3b: Green
+    optionresponse3c: Yellow
+    optionresponse3d: Blue
+    question4: ¿Como se escribe rojo en ingles?
+    optionresponse4a: Black
+    optionresponse4b: Purple
+    optionresponse4c: Orange
+    optionresponse4d: Red
+    question5: ¿Como se escribe negro en ingles?
+    optionresponse5a: Black
+    optionresponse5b: Red
+    optionresponse5c: Blue
+    optionresponse5d: Yellow
+}
+</code></pre>
+<h2 is-upgraded>Response:</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Activity add&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad ver cuestionario opción multiple." duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Obtiene la información de la actividad de tipo cuestionario de opción multiple.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/lession/&#34;id_lession&#34;/multiple_questions/view
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Get&#34;</p>
+<h2 is-upgraded>Parameters:</h2>
+<pre><code>{
+    limit: 1
+    pages: 0
+}
+</code></pre>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Response:</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad parejas" duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Crea una nueva actividad de parejas.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/lession/&#34;id_lession&#34;/couples
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Post&#34;</p>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Body:</h2>
+<pre><code>{
+    activityname: MiNameActivity
+    couple_lenguage1a: Amarillo
+    couple_lenguage1b: Yellow
+    couple_lenguage2a: Rojo
+    couple_lenguage2b: Red
+    couple_lenguage3a: Azul
+    couple_lenguage3b: Blue
+    couple_lenguage4a: Verde
+    couple_lenguage4b: Green
+    couple_lenguage5a: Negro
+    couple_lenguage5b: Black
+    couple_lenguage6a: Anaranjado
+    couple_lenguage6b: Orange
+    couple_lenguage7a: Blanco
+    couple_lenguage7b: White
+    couple_lenguage8a: Celeste
+    couple_lenguage8b: Light blue
+}
+</code></pre>
+<h2 is-upgraded>Response:</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Activity add&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Entidad ver parejas." duration="0">
+        <h2 is-upgraded>Description</h2>
+<p>Obtiene la información de la actividad de parejas.</p>
+<h2 is-upgraded>URL:</h2>
+<pre><code>https://api.com/v1/lesson/lession/&#34;id_lession&#34;/multiple_questions/view
+</code></pre>
+<h2 is-upgraded>Method:</h2>
+<p>&#34;Get&#34;</p>
+<h2 is-upgraded>Parameters:</h2>
+<pre><code>{
+    limit: 1
+    pages: 0
+}
+</code></pre>
+<h2 is-upgraded>Headers:</h2>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h2 is-upgraded>Response:</h2>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
