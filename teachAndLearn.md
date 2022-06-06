@@ -168,6 +168,8 @@ https://api.com/teach-and-learn-v1/new-lesson
 ```
 {
     lessonname: MiNombreDeEjemplo
+    language: English
+    description: The learning of colors will be developed.
     password: ContraseniaEjemplo
 }
 ```
@@ -277,16 +279,16 @@ https://api.com/teach-and-learn-v1/lesson/all"
 }
 ```
 
-## Entidad video
+## Entidad documento
 
 ### Description
 
-Crea una nueva actvidad de video.
+Crea una nueva actvidad de documento.
 
 ### URL:
 
 ```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/video
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file
 ```
 
 ### Method:
@@ -306,7 +308,8 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/video
 ```
 {
     activityname: MiNameActivity
-    linkvideo: URL
+    linkfile: URL
+    description: Support material
 }
 ```
 
@@ -324,15 +327,15 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/video
         "message": "Invalid request"
 }
 ```
-## Entidad ver video
+## Entidad ver documento
 
 ### Description
 
-Obtiene la información de la actividad de video.
+Obtiene la información de la actividad de documento.
 
 ### URL:
 ```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/video/view
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file/view
 ```
 
 ### Method:

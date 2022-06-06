@@ -152,6 +152,8 @@
 <h2 is-upgraded>Body:</h2>
 <pre><code>{
     lessonname: MiNombreDeEjemplo
+    language: English
+    description: The learning of colors will be developed.
     password: ContraseniaEjemplo
 }
 </code></pre>
@@ -249,11 +251,11 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Entidad video" duration="0">
+      <google-codelab-step label="Entidad documento" duration="0">
         <h2 is-upgraded>Description</h2>
-<p>Crea una nueva actvidad de video.</p>
+<p>Crea una nueva actvidad de documento.</p>
 <h2 is-upgraded>URL:</h2>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/video
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/file
 </code></pre>
 <h2 is-upgraded>Method:</h2>
 <p>&#34;Post&#34;</p>
@@ -266,7 +268,8 @@
 <h2 is-upgraded>Body:</h2>
 <pre><code>{
     activityname: MiNameActivity
-    linkvideo: URL
+    linkfile: URL
+    description: Support material
 }
 </code></pre>
 <h2 is-upgraded>Response:</h2>
@@ -288,11 +291,11 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Entidad ver video" duration="0">
+      <google-codelab-step label="Entidad ver documento" duration="0">
         <h2 is-upgraded>Description</h2>
-<p>Obtiene la información de la actividad de video.</p>
+<p>Obtiene la información de la actividad de documento.</p>
 <h2 is-upgraded>URL:</h2>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/video/view
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/file/view
 </code></pre>
 <h2 is-upgraded>Method:</h2>
 <p>&#34;Get&#34;</p>
