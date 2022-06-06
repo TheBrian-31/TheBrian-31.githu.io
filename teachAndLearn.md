@@ -378,7 +378,7 @@ Crea una nueva nueva actividad de tipo cuestionario.
 
 ### URL:
 ```
-https://api.com/teach-and-learn-v1lesson/"id_lesson"/questionnaire
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire
 ```
 
 ### Method:
