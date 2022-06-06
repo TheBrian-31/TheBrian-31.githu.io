@@ -148,7 +148,7 @@ Crea una nueva lección.
 
 ### URL:
 ```
-https://api.com/v1/new-lession
+https://api.com/v1/new-lesson
 ```
 
 ### Method:
@@ -167,7 +167,7 @@ https://api.com/v1/new-lession
 
 ```
 {
-    lessionname: MiNombreDeEjemplo
+    lessonname: MiNombreDeEjemplo
     password: ContraseniaEjemplo
 }
 ```
@@ -177,7 +177,7 @@ https://api.com/v1/new-lession
 - 200
 ```
 {
-        "message": "Lession created"
+        "message": "Lesson created"
 }
 ```
 - 400
@@ -200,10 +200,10 @@ Obtiene la información de la lección.
 ### URL:
 Esta es la ruta para ver una nueva lección.
 ```
-https://api.com/v1/lession/one/"id_lession"
+https://api.com/v1/lesson/one/"id_lesson"
 ```
 <aside class="positive">
-<b>Nota:</b> En "id_lession" debe ir el identificador de la lección que desea ver.
+<b>Nota:</b> En "id_lesson" debe ir el identificador de la lección que desea ver.
 </aside>
 
 ### Method:
@@ -241,7 +241,7 @@ Obtiene la información de todas las lecciones.
 
 ### URL:
 ```
-https://api.com/v1/lession/all"
+https://api.com/v1/lesson/all"
 ```
 
 ### Method:
@@ -286,7 +286,7 @@ Crea una nueva actvidad de video.
 ### URL:
 
 ```
-https://api.com/v1/lession/"id_lession"/video
+https://api.com/v1/lesson/"id_lesson"/video
 ```
 
 ### Method:
@@ -332,7 +332,7 @@ Obtiene la información de la actividad de video.
 
 ### URL:
 ```
-https://api.com/v1/lession/"id_lession"/video/view
+https://api.com/v1/lesson/"id_lesson"/video/view
 ```
 
 ### Method:
@@ -375,7 +375,7 @@ Crea una nueva nueva actividad de tipo cuestionario.
 
 ### URL:
 ```
-https://api.com/v1lession/"id_lession"/questionnaire
+https://api.com/v1lesson/"id_lesson"/questionnaire
 ```
 
 ### Method:
@@ -441,7 +441,7 @@ Obtiene la información de la actividad cuestionario.
 
 ### URL:
 ```
-https://api.com/v1/lession/"id_lession"/questionnaire/view
+https://api.com/v1/lesson/"id_lesson"/questionnaire/view
 ```
 
 ### Method:
@@ -488,7 +488,7 @@ Crea una nueva nueva actividad de tipo cuestionario de opción multiple.
 
 ### URL:
 ```
-https://api.com/v1/lession/"id_lession"/multiple_questions
+https://api.com/v1/lesson/"id_lesson"/multiple_questions
 ```
 
 ### Method:
@@ -560,7 +560,7 @@ Obtiene la información de la actividad de tipo cuestionario de opción multiple
 
 ### URL:
 ```
-https://api.com/v1/lession/"id_lession"/multiple_questions/view
+https://api.com/v1/lesson/"id_lesson"/multiple_questions/view
 ```
 
 ### Method:
@@ -607,7 +607,7 @@ Crea una nueva actividad de parejas.
 ### URL:
 
 ```
-https://api.com/v1/lession/"id_lession"/couples
+https://api.com/v1/lesson/"id_lesson"/couples
 ```
 
 ### Method:
@@ -670,7 +670,7 @@ Obtiene la información de la actividad de parejas.
 
 ### URL:
 ```
-https://api.com/v1/lesson/lession/"id_lession"/multiple_questions/view
+https://api.com/v1/lesson/lesson/"id_lesson"/multiple_questions/view
 ```
 
 ### Method:
