@@ -16,7 +16,7 @@ Version 1.0.0
 ### Host de la API:
 
 ```
-https://api.com/v1
+https://api.com/teach-and-learn-v1
 ```
 ### Formato de respuesta:
 
@@ -30,7 +30,7 @@ Permite crear un nuevo usuario.
 
 ### URL:
 ```
-https://api.com/v1/user
+https://api.com/teach-and-learn-v1/user
 ```
 
 ### Method:
@@ -89,7 +89,7 @@ Obtiene la información del usuario con el username.
 ### URL:
 
 ```
-https://api.com/v1/auth/signin
+https://api.com/teach-and-learn-v1/auth/signin
 ```
 
 ### Method:
@@ -148,7 +148,7 @@ Crea una nueva lección.
 
 ### URL:
 ```
-https://api.com/v1/new-lesson
+https://api.com/teach-and-learn-v1/new-lesson
 ```
 
 ### Method:
@@ -200,7 +200,7 @@ Obtiene la información de la lección.
 ### URL:
 Esta es la ruta para ver una nueva lección.
 ```
-https://api.com/v1/lesson/one/"id_lesson"
+https://api.com/teach-and-learn-v1/lesson/one/"id_lesson"
 ```
 <aside class="positive">
 <b>Nota:</b> En "id_lesson" debe ir el identificador de la lección que desea ver.
@@ -241,7 +241,7 @@ Obtiene la información de todas las lecciones.
 
 ### URL:
 ```
-https://api.com/v1/lesson/all"
+https://api.com/teach-and-learn-v1/lesson/all"
 ```
 
 ### Method:
@@ -286,7 +286,7 @@ Crea una nueva actvidad de video.
 ### URL:
 
 ```
-https://api.com/v1/lesson/"id_lesson"/video
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/video
 ```
 
 ### Method:
@@ -332,7 +332,7 @@ Obtiene la información de la actividad de video.
 
 ### URL:
 ```
-https://api.com/v1/lesson/"id_lesson"/video/view
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/video/view
 ```
 
 ### Method:
@@ -375,7 +375,7 @@ Crea una nueva nueva actividad de tipo cuestionario.
 
 ### URL:
 ```
-https://api.com/v1lesson/"id_lesson"/questionnaire
+https://api.com/teach-and-learn-v1lesson/"id_lesson"/questionnaire
 ```
 
 ### Method:
@@ -441,7 +441,7 @@ Obtiene la información de la actividad cuestionario.
 
 ### URL:
 ```
-https://api.com/v1/lesson/"id_lesson"/questionnaire/view
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/view
 ```
 
 ### Method:
@@ -488,7 +488,7 @@ Crea una nueva nueva actividad de tipo cuestionario de opción multiple.
 
 ### URL:
 ```
-https://api.com/v1/lesson/"id_lesson"/multiple_questions
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions
 ```
 
 ### Method:
@@ -560,7 +560,7 @@ Obtiene la información de la actividad de tipo cuestionario de opción multiple
 
 ### URL:
 ```
-https://api.com/v1/lesson/"id_lesson"/multiple_questions/view
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/view
 ```
 
 ### Method:
@@ -607,7 +607,7 @@ Crea una nueva actividad de parejas.
 ### URL:
 
 ```
-https://api.com/v1/lesson/"id_lesson"/couples
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couples
 ```
 
 ### Method:
@@ -670,7 +670,7 @@ Obtiene la información de la actividad de parejas.
 
 ### URL:
 ```
-https://api.com/v1/lesson/lesson/"id_lesson"/multiple_questions/view
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/view
 ```
 
 ### Method:
