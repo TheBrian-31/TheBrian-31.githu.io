@@ -95,7 +95,7 @@ Obtiene la información del usuario con el username.
 #### URL:
 
 ```
-https://api.com/teach-and-learn-v1/user/signin
+https://api.com/teach-and-learn-v1/user/
 ```
 
 #### Headers:
@@ -154,7 +154,7 @@ Obtiene la información del todos los usuarios.
 #### URL:
 
 ```
-https://api.com/teach-and-learn-v1/user/signin
+https://api.com/teach-and-learn-v1/user/all
 ```
 
 #### Parameters:
