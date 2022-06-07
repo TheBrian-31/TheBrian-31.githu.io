@@ -41,18 +41,19 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Entidad usuario." duration="0">
-        <h2 is-upgraded>Description</h2>
+      <google-codelab-step label="Entidad usuario" duration="0">
+        <h2 is-upgraded>Crear usuario</h2>
+<h3 is-upgraded>Method:</h3>
+<p>&#34;Post&#34;</p>
+<h3 is-upgraded>Description</h3>
 <p>Permite crear un nuevo usuario.</p>
-<h2 is-upgraded>URL:</h2>
+<h3 is-upgraded>URL:</h3>
 <pre><code>https://api.com/teach-and-learn-v1/user
 </code></pre>
-<h2 is-upgraded>Method:</h2>
-<p>&#34;Post&#34;</p>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{&#39;Content-Type&#39;: &#39;application/json&#39;}
 </code></pre>
-<h2 is-upgraded>Body:</h2>
+<h3 is-upgraded>Body:</h3>
 <p>Para estudiantes:</p>
 <pre><code>{
     username: MiNombreDeEjemplo
@@ -69,7 +70,7 @@
     typeuser: teacher
 }
 </code></pre>
-<h2 is-upgraded>Response</h2>
+<h3 is-upgraded>Response</h3>
 <ul>
 <li>201</li>
 </ul>
@@ -84,24 +85,20 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Entidad iniciar sesión." duration="0">
-        <h2 is-upgraded>Description</h2>
+<h2 is-upgraded>Obtener un usuario</h2>
+<h3 is-upgraded>Method:</h3>
+<p>&#34;Get&#34;</p>
+<h3 is-upgraded>Description</h3>
 <p>Obtiene la información del usuario con el username.</p>
-<h2 is-upgraded>URL:</h2>
-<pre><code>https://api.com/teach-and-learn-v1/auth/signin
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/user/signin
 </code></pre>
-<h2 is-upgraded>Method:</h2>
-<p>&#34;Post&#34;</p>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{   
     &#39;Content-Type&#39;: &#39;application/json&#39;
 }
 </code></pre>
-<h2 is-upgraded>Body:</h2>
+<h3 is-upgraded>Body:</h3>
 <p>Para estudiantes:</p>
 <pre><code>{
     username: MiNombreDeEjemplo
@@ -116,7 +113,7 @@
     typeuser: teacher
 }
 </code></pre>
-<h2 is-upgraded>Response</h2>
+<h3 is-upgraded>Response</h3>
 <ul>
 <li>200</li>
 </ul>
@@ -131,70 +128,26 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Entidad nueva lección." duration="0">
-        <h2 is-upgraded>Description</h2>
-<p>Crea una nueva lección.</p>
-<h2 is-upgraded>URL:</h2>
-<pre><code>https://api.com/teach-and-learn-v1/new-lesson
-</code></pre>
-<h2 is-upgraded>Method:</h2>
-<p>&#34;Post&#34;</p>
-<h2 is-upgraded>Headers:</h2>
-<pre><code>{
-    &#39;Content-Type&#39;: &#39;application/json&#39;
-    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
-}
-</code></pre>
-<h2 is-upgraded>Body:</h2>
-<pre><code>{
-    lessonname: MiNombreDeEjemplo
-    language: English
-    description: The learning of colors will be developed.
-    password: ContraseniaEjemplo
-}
-</code></pre>
-<h2 is-upgraded>Response:</h2>
-<ul>
-<li>200</li>
-</ul>
-<pre><code>{
-        &#34;message&#34;: &#34;Lesson created&#34;
-}
-</code></pre>
-<ul>
-<li>400</li>
-</ul>
-<pre><code>{
-        &#34;message&#34;: &#34;Invalid request&#34;
-}
-</code></pre>
-<aside class="special"><p><strong>Nota:</strong> Solo los profesores podrán agregar una lección. </p>
-</aside>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Entidad ver lección." duration="0">
-        <h2 is-upgraded>Description</h2>
-<p>Obtiene la información de la lección.</p>
-<h2 is-upgraded>URL:</h2>
-<p>Esta es la ruta para ver una nueva lección.</p>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/one/&#34;id_lesson&#34;
-</code></pre>
-<aside class="special"><p><strong>Nota:</strong> En &#34;id_lesson&#34; debe ir el identificador de la lección que desea ver. </p>
-</aside>
-<h2 is-upgraded>Method:</h2>
+<h2 is-upgraded>Obtener todos los usuarios</h2>
+<h3 is-upgraded>Method:</h3>
 <p>&#34;Get&#34;</p>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Description</h3>
+<p>Obtiene la información del todos los usuarios.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/user/signin
+</code></pre>
+<h3 is-upgraded>Parameters:</h3>
+<pre><code>{
+    limit: 10
+    pages: 0
+}
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
-<h2 is-upgraded>Response</h2>
+<h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
 </ul>
@@ -213,26 +166,96 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Entidad Ver lecciones" duration="0">
-        <h2 is-upgraded>Description</h2>
-<p>Obtiene la información de todas las lecciones.</p>
-<h2 is-upgraded>URL:</h2>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/all&#34;
+      <google-codelab-step label="Entidad lección" duration="0">
+        <h2 is-upgraded>Crear lección</h2>
+<h3 is-upgraded>Method:</h3>
+<p>&#34;Post&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Crea una nueva lección.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson
 </code></pre>
-<h2 is-upgraded>Method:</h2>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Body:</h3>
+<pre><code>{
+    lessonname: MiNombreDeEjemplo
+    language: English
+    description: The learning of colors will be developed.
+    password: ContraseniaEjemplo
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Lesson created&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<aside class="special"><p><strong>Nota:</strong> Solo los profesores podrán agregar una lección. </p>
+</aside>
+<h2 is-upgraded>Obtener información de lección.</h2>
+<h3 is-upgraded>Method:</h3>
 <p>&#34;Get&#34;</p>
-<h2 is-upgraded>Parameters:</h2>
+<h3 is-upgraded>Description</h3>
+<p>Obtiene la información de la lección.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;
+</code></pre>
+<aside class="special"><p><strong>Nota:</strong> En &#34;id_lesson&#34; debe ir el identificador de la lección que desea ver. </p>
+</aside>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Obtener información de todas las lecciones</h2>
+<h3 is-upgraded>Method:</h3>
+<p>&#34;Get&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Obtiene la información de todas las lecciones.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson&#34;
+</code></pre>
+<h3 is-upgraded>Parameters:</h3>
 <pre><code>{
     limit: 10
     pages: 0
 }
 </code></pre>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
-<h2 is-upgraded>Response:</h2>
+<h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
 </ul>
@@ -252,27 +275,28 @@
       </google-codelab-step>
     
       <google-codelab-step label="Entidad documento" duration="0">
-        <h2 is-upgraded>Description</h2>
+        <h2 is-upgraded>Crear documento</h2>
+<h3 is-upgraded>Method:</h3>
+<p>&#34;Post&#34;</p>
+<h3 is-upgraded>Description</h3>
 <p>Crea una nueva actvidad de documento.</p>
-<h2 is-upgraded>URL:</h2>
+<h3 is-upgraded>URL:</h3>
 <pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/file
 </code></pre>
-<h2 is-upgraded>Method:</h2>
-<p>&#34;Post&#34;</p>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Content-Type&#39;: &#39;application/json&#39;
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
-<h2 is-upgraded>Body:</h2>
+<h3 is-upgraded>Body:</h3>
 <pre><code>{
     activityname: MiNameActivity
     linkfile: URL
     description: Support material
 }
 </code></pre>
-<h2 is-upgraded>Response:</h2>
+<h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
 </ul>
@@ -287,30 +311,54 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Entidad ver documento" duration="0">
-        <h2 is-upgraded>Description</h2>
-<p>Obtiene la información de la actividad de documento.</p>
-<h2 is-upgraded>URL:</h2>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/file/view
-</code></pre>
-<h2 is-upgraded>Method:</h2>
+<h2 is-upgraded>Obtener información de documento</h2>
+<h3 is-upgraded>Method:</h3>
 <p>&#34;Get&#34;</p>
-<h2 is-upgraded>Parameters:</h2>
+<h3 is-upgraded>Description</h3>
+<p>Obtiene la información de la actividad de documento.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/file/&#34;id_file&#34;
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Obtener información de todos los documento</h2>
+<h3 is-upgraded>Method:</h3>
+<p>&#34;Get&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Obtiene la información de la actividad de documento.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/file/all
+</code></pre>
+<h3 is-upgraded>Parameters:</h3>
 <pre><code>{
     limit: 1
     pages: 0
 }
 </code></pre>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
-<h2 is-upgraded>Response:</h2>
+<h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
 </ul>
@@ -330,20 +378,21 @@
       </google-codelab-step>
     
       <google-codelab-step label="Entidad cuestionario" duration="0">
-        <h2 is-upgraded>Description</h2>
+        <h2 is-upgraded>Crear cuestionario</h2>
+<h3 is-upgraded>Method:</h3>
+<p>&#34;Post&#34;</p>
+<h3 is-upgraded>Description</h3>
 <p>Crea una nueva nueva actividad de tipo cuestionario.</p>
-<h2 is-upgraded>URL:</h2>
+<h3 is-upgraded>URL:</h3>
 <pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire
 </code></pre>
-<h2 is-upgraded>Method:</h2>
-<p>&#34;Post&#34;</p>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Content-Type&#39;: &#39;application/json&#39;
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
-<h2 is-upgraded>Body:</h2>
+<h3 is-upgraded>Body:</h3>
 <pre><code>{
     activityname: MiNameActivity
     question1: ¿Como se escribe verde en ingles?
@@ -368,7 +417,7 @@
     response10: Purple
 }
 </code></pre>
-<h2 is-upgraded>Response:</h2>
+<h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
 </ul>
@@ -383,30 +432,54 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Entidad ver cuestionario" duration="0">
-        <h2 is-upgraded>Description</h2>
-<p>Obtiene la información de la actividad cuestionario.</p>
-<h2 is-upgraded>URL:</h2>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire/view
-</code></pre>
-<h2 is-upgraded>Method:</h2>
+<h2 is-upgraded>Obtener información de cuestionario</h2>
+<h3 is-upgraded>Method:</h3>
 <p>&#34;Get&#34;</p>
-<h2 is-upgraded>Parameters:</h2>
+<h3 is-upgraded>Description</h3>
+<p>Obtiene la información de la actividad cuestionario.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire/&#34;id_questionnarie&#34;
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Obtener la información de los cuestionarios</h2>
+<h3 is-upgraded>Method:</h3>
+<p>&#34;Get&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Obtiene la información de la actividad cuestionario.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire/all
+</code></pre>
+<h3 is-upgraded>Parameters:</h3>
 <pre><code>{
     limit: 1
     pages: 0
 }
 </code></pre>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
-<h2 is-upgraded>Response:</h2>
+<h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
 </ul>
@@ -426,20 +499,21 @@
       </google-codelab-step>
     
       <google-codelab-step label="Entidad cuestionario de opción multiple." duration="0">
-        <h2 is-upgraded>Description</h2>
+        <h2 is-upgraded>Crear cuestionario de opción multiple.</h2>
+<h3 is-upgraded>Method:</h3>
+<p>&#34;Post&#34;</p>
+<h3 is-upgraded>Description</h3>
 <p>Crea una nueva nueva actividad de tipo cuestionario de opción multiple.</p>
-<h2 is-upgraded>URL:</h2>
+<h3 is-upgraded>URL:</h3>
 <pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions
 </code></pre>
-<h2 is-upgraded>Method:</h2>
-<p>&#34;Post&#34;</p>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Content-Type&#39;: &#39;application/json&#39;
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
-<h2 is-upgraded>Body:</h2>
+<h3 is-upgraded>Body:</h3>
 <pre><code>{
     activityname: MiNameActivity
     question1: ¿Como se escribe anaranjado en ingles?
@@ -469,7 +543,7 @@
     optionresponse5d: Yellow
 }
 </code></pre>
-<h2 is-upgraded>Response:</h2>
+<h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
 </ul>
@@ -484,30 +558,54 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Entidad ver cuestionario opción multiple." duration="0">
-        <h2 is-upgraded>Description</h2>
-<p>Obtiene la información de la actividad de tipo cuestionario de opción multiple.</p>
-<h2 is-upgraded>URL:</h2>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions/view
-</code></pre>
-<h2 is-upgraded>Method:</h2>
+<h2 is-upgraded>Obtener información de cuestionario opción multiple.</h2>
+<h3 is-upgraded>Method:</h3>
 <p>&#34;Get&#34;</p>
-<h2 is-upgraded>Parameters:</h2>
+<h3 is-upgraded>Description</h3>
+<p>Obtiene la información de la actividad de tipo cuestionario de opción multiple.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions/&#34;id_multiple_questions&#34;
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Obtener información de todos los cuestionario opción multiple.</h2>
+<h3 is-upgraded>Method:</h3>
+<p>&#34;Get&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Obtiene la información de la actividad de tipo cuestionario de opción multiple.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions/all
+</code></pre>
+<h3 is-upgraded>Parameters:</h3>
 <pre><code>{
     limit: 1
     pages: 0
 }
 </code></pre>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
-<h2 is-upgraded>Response:</h2>
+<h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
 </ul>
@@ -527,20 +625,21 @@
       </google-codelab-step>
     
       <google-codelab-step label="Entidad parejas" duration="0">
-        <h2 is-upgraded>Description</h2>
-<p>Crea una nueva actividad de parejas.</p>
-<h2 is-upgraded>URL:</h2>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/couples
-</code></pre>
-<h2 is-upgraded>Method:</h2>
+        <h2 is-upgraded>Crear una actividad de parejas</h2>
+<h3 is-upgraded>Method:</h3>
 <p>&#34;Post&#34;</p>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Description</h3>
+<p>Crea una nueva actividad de parejas.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/couple
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Content-Type&#39;: &#39;application/json&#39;
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
-<h2 is-upgraded>Body:</h2>
+<h3 is-upgraded>Body:</h3>
 <pre><code>{
     activityname: MiNameActivity
     couple_lenguage1a: Amarillo
@@ -561,7 +660,7 @@
     couple_lenguage8b: Light blue
 }
 </code></pre>
-<h2 is-upgraded>Response:</h2>
+<h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
 </ul>
@@ -576,15 +675,37 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Entidad ver parejas." duration="0">
-        <h2 is-upgraded>Description</h2>
+<h2 is-upgraded>Obtener información de actividad parejas</h2>
+<h3 is-upgraded>Description</h3>
 <p>Obtiene la información de la actividad de parejas.</p>
-<h2 is-upgraded>URL:</h2>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions/view
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/couple/&#34;id_couple&#34;
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Obtener información de todas las actividad parejas</h2>
+<h3 is-upgraded>Description</h3>
+<p>Obtiene la información de la actividad de parejas.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/couple/&#34;id_couple&#34;/all
 </code></pre>
 <h2 is-upgraded>Method:</h2>
 <p>&#34;Get&#34;</p>

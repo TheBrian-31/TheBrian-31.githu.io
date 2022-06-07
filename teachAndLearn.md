@@ -22,27 +22,29 @@ https://api.com/teach-and-learn-v1
 
 Siempre que realices una petición correcta a la API obtendrás un JSON.
 
-## Entidad usuario.
+## Entidad usuario
 
-### Description
+### Crear usuario
+
+#### Method:
+
+"Post"
+
+#### Description
 
 Permite crear un nuevo usuario.
 
-### URL:
+#### URL:
 ```
 https://api.com/teach-and-learn-v1/user
 ```
 
-### Method:
-
-"Post"
-
-### Headers:
+#### Headers:
 ```
 {'Content-Type': 'application/json'}
 ```
 
-### Body:
+#### Body:
 
 Para estudiantes:
 
@@ -66,7 +68,7 @@ Para profesores:
 }
 ```
 
-### Response
+#### Response
 - 201
 ```
 {
@@ -80,31 +82,30 @@ Para profesores:
 }
 ```
 
-## Entidad iniciar sesión.
+### Obtener un usuario
 
-### Description
+#### Method:
+
+"Get"
+
+#### Description
 
 Obtiene la información del usuario con el username.
 
-### URL:
+#### URL:
 
 ```
-https://api.com/teach-and-learn-v1/auth/signin
+https://api.com/teach-and-learn-v1/user/signin
 ```
 
-### Method:
-
-"Post"
-
-
-### Headers:
+#### Headers:
 ```
 {   
     'Content-Type': 'application/json'
 }
 ```
 
-### Body:
+#### Body:
 
 Para estudiantes:
 
@@ -126,7 +127,7 @@ Para profesores:
 }
 ```
 
-### Response
+#### Response
 - 200
 ```
 {
@@ -140,22 +141,68 @@ Para profesores:
 }
 ```
 
-## Entidad nueva lección.
+### Obtener todos los usuarios
 
-### Description
+#### Method:
 
-Crea una nueva lección.
+"Get"
 
-### URL:
+#### Description
+
+Obtiene la información del todos los usuarios.
+
+#### URL:
+
 ```
-https://api.com/teach-and-learn-v1/new-lesson
+https://api.com/teach-and-learn-v1/user/signin
 ```
 
-### Method:
+#### Parameters:
+
+```
+{
+    limit: 10
+    pages: 0
+}
+```
+
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+## Entidad lección
+
+### Crear lección
+
+#### Method:
 
 "Post"
 
-### Headers:
+#### Description
+
+Crea una nueva lección.
+
+#### URL:
+```
+https://api.com/teach-and-learn-v1/lesson
+```
+
+#### Headers:
 ```
 {
     'Content-Type': 'application/json'
@@ -163,7 +210,7 @@ https://api.com/teach-and-learn-v1/new-lesson
 }
 ```
 
-### Body:
+#### Body:
 
 ```
 {
@@ -174,7 +221,7 @@ https://api.com/teach-and-learn-v1/new-lesson
 }
 ```
 
-### Response:
+#### Response:
 
 - 200
 ```
@@ -193,33 +240,32 @@ https://api.com/teach-and-learn-v1/new-lesson
 <b>Nota:</b> Solo los profesores podrán agregar una lección.
 </aside>
 
-## Entidad ver lección.
+### Obtener información de lección.
 
-### Description
+#### Method:
+
+"Get"
+
+#### Description
 
 Obtiene la información de la lección.
 
-### URL:
-Esta es la ruta para ver una nueva lección.
+#### URL:
 ```
-https://api.com/teach-and-learn-v1/lesson/one/"id_lesson"
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"
 ```
 <aside class="positive">
 <b>Nota:</b> En "id_lesson" debe ir el identificador de la lección que desea ver.
 </aside>
 
-### Method:
-
-"Get"
-
-### Headers:
+#### Headers:
 ```
 {
     'Authorization': 'Bearer codigoDeAutentificación'
 }
 ```
 
-### Response
+#### Response
 
 - 200
 
@@ -236,21 +282,21 @@ https://api.com/teach-and-learn-v1/lesson/one/"id_lesson"
 }
 ```
 
-## Entidad Ver lecciones
+### Obtener información de todas las lecciones
 
-### Description
-Obtiene la información de todas las lecciones.
-
-### URL:
-```
-https://api.com/teach-and-learn-v1/lesson/all"
-```
-
-### Method:
+#### Method:
 
 "Get"
 
-### Parameters:
+#### Description
+Obtiene la información de todas las lecciones.
+
+#### URL:
+```
+https://api.com/teach-and-learn-v1/lesson"
+```
+
+#### Parameters:
 
 ```
 {
@@ -259,13 +305,13 @@ https://api.com/teach-and-learn-v1/lesson/all"
 }
 ```
 
-### Headers:
+#### Headers:
 ```
 {
     'Authorization': 'Bearer codigoDeAutentificación'
 }
 ```
-### Response:
+#### Response:
 - 200
 ```
 {
@@ -281,21 +327,23 @@ https://api.com/teach-and-learn-v1/lesson/all"
 
 ## Entidad documento
 
-### Description
+### Crear documento
+
+#### Method:
+
+"Post"
+
+#### Description
 
 Crea una nueva actvidad de documento.
 
-### URL:
+#### URL:
 
 ```
 https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file
 ```
 
-### Method:
-
-"Post"
-
-### Headers:
+#### Headers:
 ```
 {
     'Content-Type': 'application/json'
@@ -303,7 +351,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file
 }
 ```
 
-### Body:
+#### Body:
 
 ```
 {
@@ -313,7 +361,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file
 }
 ```
 
-### Response:
+#### Response:
 
 - 200
 ```
@@ -327,22 +375,60 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file
         "message": "Invalid request"
 }
 ```
-## Entidad ver documento
+### Obtener información de documento
 
-### Description
-
-Obtiene la información de la actividad de documento.
-
-### URL:
-```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file/view
-```
-
-### Method:
+#### Method:
 
 "Get"
 
-### Parameters:
+#### Description
+
+Obtiene la información de la actividad de documento.
+
+#### URL:
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file/"id_file"
+```
+
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+
+#### Response
+
+- 200
+
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+
+```
+{
+        "message": "Invalid request"
+}
+```
+### Obtener información de todos los documento
+
+#### Method:
+
+"Get"
+
+#### Description
+
+Obtiene la información de la actividad de documento.
+
+#### URL:
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file/all
+```
+
+#### Parameters:
 
 ```
 {
@@ -351,13 +437,13 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file/view
 }
 ```
 
-### Headers:
+#### Headers:
 ```
 {
     'Authorization': 'Bearer codigoDeAutentificación'
 }
 ```
-### Response:
+#### Response:
 - 200
 ```
 {
@@ -373,19 +459,21 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file/view
 
 ## Entidad cuestionario
 
-### Description
+### Crear cuestionario
+
+#### Method:
+
+"Post"
+
+#### Description
 Crea una nueva nueva actividad de tipo cuestionario.
 
-### URL:
+#### URL:
 ```
 https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire
 ```
 
-### Method:
-
-"Post"
-
-### Headers:
+#### Headers:
 ```
 {
     'Content-Type': 'application/json'
@@ -393,7 +481,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire
 }
 ```
 
-### Body:
+#### Body:
 
 ```
 {
@@ -421,7 +509,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire
 }
 ```
 
-### Response:
+#### Response:
 
 - 200
 ```
@@ -436,22 +524,61 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire
 }
 ```
 
-## Entidad ver cuestionario
+### Obtener información de cuestionario
 
-### Description
-
-Obtiene la información de la actividad cuestionario.
-
-### URL:
-```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/view
-```
-
-### Method:
+#### Method:
 
 "Get"
 
-### Parameters:
+#### Description
+
+Obtiene la información de la actividad cuestionario.
+
+#### URL:
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/"id_questionnarie"
+```
+
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+
+#### Response
+
+- 200
+
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Obtener la información de los cuestionarios
+
+#### Method:
+
+"Get"
+
+#### Description
+
+Obtiene la información de la actividad cuestionario.
+
+#### URL:
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/all
+```
+
+#### Parameters:
 
 ```
 {
@@ -460,13 +587,13 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/view
 }
 ```
 
-### Headers:
+#### Headers:
 ```
 {
     'Authorization': 'Bearer codigoDeAutentificación'
 }
 ```
-### Response:
+#### Response:
 - 200
 
 ```
@@ -485,20 +612,22 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/view
 
 ## Entidad cuestionario de opción multiple.
 
-### Description
+### Crear cuestionario de opción multiple.
+
+#### Method:
+
+"Post"
+
+#### Description
 
 Crea una nueva nueva actividad de tipo cuestionario de opción multiple.
 
-### URL:
+#### URL:
 ```
 https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions
 ```
 
-### Method:
-
-"Post"
-
-### Headers:
+#### Headers:
 ```
 {
     'Content-Type': 'application/json'
@@ -506,7 +635,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions
 }
 ```
 
-### Body:
+#### Body:
 
 ```
 {
@@ -539,7 +668,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions
 }
 ```
 
-### Response:
+#### Response:
 
 - 200
 ```
@@ -555,22 +684,61 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions
 }
 ```
 
-## Entidad ver cuestionario opción multiple.
+### Obtener información de cuestionario opción multiple.
 
-### Description
-
-Obtiene la información de la actividad de tipo cuestionario de opción multiple.
-
-### URL:
-```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/view
-```
-
-### Method:
+#### Method:
 
 "Get"
 
-### Parameters:
+#### Description
+
+Obtiene la información de la actividad de tipo cuestionario de opción multiple.
+
+#### URL:
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/"id_multiple_questions"
+```
+
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+
+#### Response
+
+- 200
+
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Obtener información de todos los cuestionario opción multiple.
+
+#### Method:
+
+"Get"
+
+#### Description
+
+Obtiene la información de la actividad de tipo cuestionario de opción multiple.
+
+#### URL:
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/all
+```
+
+#### Parameters:
 
 ```
 {
@@ -579,13 +747,13 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/view
 }
 ```
 
-### Headers:
+#### Headers:
 ```
 {
     'Authorization': 'Bearer codigoDeAutentificación'
 }
 ```
-### Response:
+#### Response:
 - 200
 
 ```
@@ -603,21 +771,23 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/view
 
 ## Entidad parejas
 
-### Description
+### Crear una actividad de parejas
 
-Crea una nueva actividad de parejas.
-
-### URL:
-
-```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couples
-```
-
-### Method:
+#### Method:
 
 "Post"
 
-### Headers:
+#### Description
+
+Crea una nueva actividad de parejas.
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couple
+```
+
+#### Headers:
 ```
 {
     'Content-Type': 'application/json'
@@ -625,7 +795,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couples
 }
 ```
 
-### Body:
+#### Body:
 
 ```
 {
@@ -649,7 +819,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couples
 }
 ```
 
-### Response:
+#### Response:
 
 - 200
 
@@ -665,15 +835,48 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couples
         "message": "Invalid request"
 }
 ```
-## Entidad ver parejas.
+### Obtener información de actividad parejas
 
-### Description
+#### Description
 
 Obtiene la información de la actividad de parejas.
 
-### URL:
+#### URL:
 ```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/view
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couple/"id_couple"
+```
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+
+#### Response
+
+- 200
+
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+
+```
+{
+        "message": "Invalid request"
+}
+```
+### Obtener información de todas las actividad parejas
+
+#### Description
+
+Obtiene la información de la actividad de parejas.
+
+#### URL:
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couple/"id_couple"/all
 ```
 
 ### Method:
