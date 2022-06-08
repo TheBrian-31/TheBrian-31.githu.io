@@ -185,6 +185,90 @@ https://api.com/teach-and-learn-v1/user/all
         "message": "Invalid request"
 }
 ```
+
+### Eliminar un usuario
+
+##### Method:
+
+"Delete"
+
+#### Description
+
+Elimina la información de un usuario.
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/user/"id_user"
+```
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Actualizar un usuario
+
+##### Method:
+
+"Put"
+
+#### Description
+
+Actualiza la información de un usuario.
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/user/"id_user"
+```
+
+#### Body
+```
+{
+    username: MiNombreDeEjemplo
+    email: EmailEjemplo
+    password: ContraseniaEjemplo
+    typeuser: student
+}
+```
+
+#### Headers:
+```
+{
+    'Content-Type': 'application/json'
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+
 ## Entidad lección
 
 ### Crear lección
@@ -311,6 +395,89 @@ https://api.com/teach-and-learn-v1/lesson"
     'Authorization': 'Bearer codigoDeAutentificación'
 }
 ```
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Eliminar una lección
+
+##### Method:
+
+"Delete"
+
+#### Description
+
+Elimina la información de una lección
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"
+```
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Actualizar una lección
+
+##### Method:
+
+"Put"
+
+#### Description
+
+Actualiza la información de una lección.
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"
+```
+
+#### Body
+```
+{
+    lessonname: MiNombreDeEjemplo
+    language: English
+    description: The learning of colors will be developed.
+    password: ContraseniaEjemplo
+}
+```
+
+#### Headers:
+```
+{
+    'Content-Type': 'application/json'
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+
 #### Response:
 - 200
 ```
@@ -456,6 +623,90 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file/all
         "message": "Invalid request"
 }
 ```
+
+
+### Eliminar un documento
+
+##### Method:
+
+"Delete"
+
+#### Description
+
+Elimina la información de un documento
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file/"id_file"
+```
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Actualizar un documento
+
+##### Method:
+
+"Put"
+
+#### Description
+
+Actualiza la información de un documento
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/file/"id_file"
+```
+
+#### Body
+```
+{
+    activityname: MiNameActivity
+    linkfile: URL
+    description: Support material
+}
+```
+
+#### Headers:
+```
+{
+    'Content-Type': 'application/json'
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+
 
 ## Entidad cuestionario
 
@@ -604,6 +855,106 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/all
 
 - 400
 
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Eliminar un cuestionario
+
+##### Method:
+
+"Delete"
+
+#### Description
+
+Elimina la información de un cuestionario
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/"id_questionnaire"
+```
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Actualizar un cuestionario
+
+##### Method:
+
+"Put"
+
+#### Description
+
+Actualiza la información de un cuestionario.
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/"id_questionnaire"
+```
+
+#### Body
+```
+{
+    activityname: MiNameActivity
+    question1: ¿Como se escribe verde en ingles?
+    response1: Green
+    question2: ¿Como se escribe amarillo en ingles?
+    response2: Yellow
+    question3: ¿Como se escribe rojo en ingles?
+    response3: Red
+    question4: ¿Como se escribe negro en ingles?
+    response4: Black
+    question5: ¿Como se escribe blanco en ingles?
+    response5: White
+    question6: ¿Como se escribe gris en ingles?
+    response6: Gray
+    question7: ¿Como se escribe anaranjado en ingles?
+    response7: Orange
+    question8: ¿Como se escribe azul en ingles?
+    response8: Blue
+    question9: ¿Como se escribe rosa en ingles?
+    response9: Pink
+    question10: ¿Como se escribe morado en ingles?
+    response10: Purple
+}
+```
+
+#### Headers:
+```
+{
+    'Content-Type': 'application/json'
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
 ```
 {
         "message": "Invalid request"
@@ -769,6 +1120,114 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/all
 }
 ```
 
+### Eliminar un cuestionario opción multiple
+
+##### Method:
+
+"Delete"
+
+#### Description
+
+Elimina la información de un cuestionario opción multiple.
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/"id_multiple_questions"
+```
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Actualizar un cuestionario
+
+##### Method:
+
+"Put"
+
+#### Description
+
+Actualiza la información de un cuestionario opción multiple.
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/"id_multiple_questions"
+```
+
+#### Body
+
+
+```
+{
+    activityname: MiNameActivity
+    question1: ¿Como se escribe anaranjado en ingles?
+    optionresponse1a: Orange
+    optionresponse1b: Red
+    optionresponse1c: Blue
+    optionresponse1d: White
+    question2: ¿Como se escribe azul en ingles?
+    optionresponse2a: Blue
+    optionresponse2b: Black
+    optionresponse2c: yellow
+    optionresponse2d: Green
+    question3: ¿Como se escribe verde en ingles?
+    optionresponse3a: Blue
+    optionresponse3b: Green
+    optionresponse3c: Yellow
+    optionresponse3d: Blue
+    question4: ¿Como se escribe rojo en ingles?
+    optionresponse4a: Black
+    optionresponse4b: Purple
+    optionresponse4c: Orange
+    optionresponse4d: Red
+    question5: ¿Como se escribe negro en ingles?
+    optionresponse5a: Black
+    optionresponse5b: Red
+    optionresponse5c: Blue
+    optionresponse5d: Yellow
+}
+```
+
+#### Headers:
+```
+{
+    'Content-Type': 'application/json'
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+
+
 ## Entidad parejas
 
 ### Crear una actividad de parejas
@@ -879,11 +1338,11 @@ Obtiene la información de la actividad de parejas.
 https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couple/"id_couple"/all
 ```
 
-### Method:
+#### Method:
 
 "Get"
 
-### Parameters:
+#### Parameters:
 
 ```
 {
@@ -892,14 +1351,14 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couple/"id_couple"/all
 }
 ```
 
-### Headers:
+#### Headers:
 ```
 {
     'Authorization': 'Bearer codigoDeAutentificación'
 }
 ```
 
-### Response:
+#### Response:
 
 - 200
 
@@ -911,6 +1370,101 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couple/"id_couple"/all
 
 - 400
 
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Eliminar una actividad de parejas
+
+##### Method:
+
+"Delete"
+
+#### Description
+
+Elimina la información de una actividad de parejas
+
+#### URL:
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couple/"id_couple"
+```
+#### Headers:
+```
+{
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
+```
+{
+        "message": "Invalid request"
+}
+```
+
+### Actualizar una actividad de parejas
+
+##### Method:
+
+"Put"
+
+#### Description
+
+Actualiza la información de una actividad de parejas.
+
+#### URL:
+
+```
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/couple/"id_couple"
+```
+
+#### Body
+```
+{
+    activityname: MiNameActivity
+    couple_lenguage1a: Amarillo
+    couple_lenguage1b: Yellow
+    couple_lenguage2a: Rojo
+    couple_lenguage2b: Red
+    couple_lenguage3a: Azul
+    couple_lenguage3b: Blue
+    couple_lenguage4a: Verde
+    couple_lenguage4b: Green
+    couple_lenguage5a: Negro
+    couple_lenguage5b: Black
+    couple_lenguage6a: Anaranjado
+    couple_lenguage6b: Orange
+    couple_lenguage7a: Blanco
+    couple_lenguage7b: White
+    couple_lenguage8a: Celeste
+    couple_lenguage8b: Light blue
+}
+```
+
+#### Headers:
+```
+{
+    'Content-Type': 'application/json'
+    'Authorization': 'Bearer codigoDeAutentificación'
+}
+```
+
+#### Response:
+- 200
+```
+{
+        "message": "Complete"
+}
+```
+- 400
 ```
 {
         "message": "Invalid request"

@@ -162,6 +162,71 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
+<h2 is-upgraded>Eliminar un usuario</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Delete&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Elimina la información de un usuario.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/user/&#34;id_user&#34;
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Actualizar un usuario</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Put&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Actualiza la información de un usuario.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/user/&#34;id_user&#34;
+</code></pre>
+<h3 is-upgraded>Body</h3>
+<pre><code>{
+    username: MiNombreDeEjemplo
+    email: EmailEjemplo
+    password: ContraseniaEjemplo
+    typeuser: student
+}
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
 
 
       </google-codelab-step>
@@ -252,6 +317,71 @@
 </code></pre>
 <h3 is-upgraded>Headers:</h3>
 <pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Eliminar una lección</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Delete&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Elimina la información de una lección</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Actualizar una lección</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Put&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Actualiza la información de una lección.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;
+</code></pre>
+<h3 is-upgraded>Body</h3>
+<pre><code>{
+    lessonname: MiNombreDeEjemplo
+    language: English
+    description: The learning of colors will be developed.
+    password: ContraseniaEjemplo
+}
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
@@ -373,6 +503,70 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
+<h2 is-upgraded>Eliminar un documento</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Delete&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Elimina la información de un documento</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/file/&#34;id_file&#34;
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Actualizar un documento</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Put&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Actualiza la información de un documento</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/file/&#34;id_file&#34;
+</code></pre>
+<h3 is-upgraded>Body</h3>
+<pre><code>{
+    activityname: MiNameActivity
+    linkfile: URL
+    description: Support material
+}
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
 
 
       </google-codelab-step>
@@ -476,6 +670,88 @@
 </code></pre>
 <h3 is-upgraded>Headers:</h3>
 <pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Eliminar un cuestionario</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Delete&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Elimina la información de un cuestionario</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire/&#34;id_questionnaire&#34;
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Actualizar un cuestionario</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Put&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Actualiza la información de un cuestionario.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire/&#34;id_questionnaire&#34;
+</code></pre>
+<h3 is-upgraded>Body</h3>
+<pre><code>{
+    activityname: MiNameActivity
+    question1: ¿Como se escribe verde en ingles?
+    response1: Green
+    question2: ¿Como se escribe amarillo en ingles?
+    response2: Yellow
+    question3: ¿Como se escribe rojo en ingles?
+    response3: Red
+    question4: ¿Como se escribe negro en ingles?
+    response4: Black
+    question5: ¿Como se escribe blanco en ingles?
+    response5: White
+    question6: ¿Como se escribe gris en ingles?
+    response6: Gray
+    question7: ¿Como se escribe anaranjado en ingles?
+    response7: Orange
+    question8: ¿Como se escribe azul en ingles?
+    response8: Blue
+    question9: ¿Como se escribe rosa en ingles?
+    response9: Pink
+    question10: ¿Como se escribe morado en ingles?
+    response10: Purple
+}
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
@@ -620,6 +896,93 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
+<h2 is-upgraded>Eliminar un cuestionario opción multiple</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Delete&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Elimina la información de un cuestionario opción multiple.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions/&#34;id_multiple_questions&#34;
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Actualizar un cuestionario</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Put&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Actualiza la información de un cuestionario opción multiple.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions/&#34;id_multiple_questions&#34;
+</code></pre>
+<h3 is-upgraded>Body</h3>
+<pre><code>{
+    activityname: MiNameActivity
+    question1: ¿Como se escribe anaranjado en ingles?
+    optionresponse1a: Orange
+    optionresponse1b: Red
+    optionresponse1c: Blue
+    optionresponse1d: White
+    question2: ¿Como se escribe azul en ingles?
+    optionresponse2a: Blue
+    optionresponse2b: Black
+    optionresponse2c: yellow
+    optionresponse2d: Green
+    question3: ¿Como se escribe verde en ingles?
+    optionresponse3a: Blue
+    optionresponse3b: Green
+    optionresponse3c: Yellow
+    optionresponse3d: Blue
+    question4: ¿Como se escribe rojo en ingles?
+    optionresponse4a: Black
+    optionresponse4b: Purple
+    optionresponse4c: Orange
+    optionresponse4d: Red
+    question5: ¿Como se escribe negro en ingles?
+    optionresponse5a: Black
+    optionresponse5b: Red
+    optionresponse5c: Blue
+    optionresponse5d: Yellow
+}
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
 
 
       </google-codelab-step>
@@ -707,20 +1070,98 @@
 <h3 is-upgraded>URL:</h3>
 <pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/couple/&#34;id_couple&#34;/all
 </code></pre>
-<h2 is-upgraded>Method:</h2>
+<h3 is-upgraded>Method:</h3>
 <p>&#34;Get&#34;</p>
-<h2 is-upgraded>Parameters:</h2>
+<h3 is-upgraded>Parameters:</h3>
 <pre><code>{
     limit: 1
     pages: 0
 }
 </code></pre>
-<h2 is-upgraded>Headers:</h2>
+<h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
 }
 </code></pre>
-<h2 is-upgraded>Response:</h2>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Eliminar una actividad de parejas</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Delete&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Elimina la información de una actividad de parejas</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/couple/&#34;id_couple&#34;
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
+<ul>
+<li>200</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Complete&#34;
+}
+</code></pre>
+<ul>
+<li>400</li>
+</ul>
+<pre><code>{
+        &#34;message&#34;: &#34;Invalid request&#34;
+}
+</code></pre>
+<h2 is-upgraded>Actualizar una actividad de parejas</h2>
+<h4 is-upgraded>Method:</h4>
+<p>&#34;Put&#34;</p>
+<h3 is-upgraded>Description</h3>
+<p>Actualiza la información de una actividad de parejas.</p>
+<h3 is-upgraded>URL:</h3>
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/couple/&#34;id_couple&#34;
+</code></pre>
+<h3 is-upgraded>Body</h3>
+<pre><code>{
+    activityname: MiNameActivity
+    couple_lenguage1a: Amarillo
+    couple_lenguage1b: Yellow
+    couple_lenguage2a: Rojo
+    couple_lenguage2b: Red
+    couple_lenguage3a: Azul
+    couple_lenguage3b: Blue
+    couple_lenguage4a: Verde
+    couple_lenguage4b: Green
+    couple_lenguage5a: Negro
+    couple_lenguage5b: Black
+    couple_lenguage6a: Anaranjado
+    couple_lenguage6b: Orange
+    couple_lenguage7a: Blanco
+    couple_lenguage7b: White
+    couple_lenguage8a: Celeste
+    couple_lenguage8b: Light blue
+}
+</code></pre>
+<h3 is-upgraded>Headers:</h3>
+<pre><code>{
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+    &#39;Authorization&#39;: &#39;Bearer codigoDeAutentificación&#39;
+}
+</code></pre>
+<h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
 </ul>
