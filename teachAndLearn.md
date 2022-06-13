@@ -959,12 +959,14 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/question
 }
 ```
 - openAnswer
+```
 {
         question: ¿Como se escribe amarrillo?
         type: openAnswer
         options: [Yellow]
         correctOption: 1
 }
+```
 
 
 #### Response:
