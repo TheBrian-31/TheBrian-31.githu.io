@@ -53,7 +53,7 @@ Para estudiantes:
     username: MiNombreDeEjemplo
     email: EmailEjemplo
     password: ContraseniaEjemplo
-    typeuser: student
+    typeUser: student
 }
 ```
 
@@ -95,7 +95,7 @@ Obtiene la información del usuario con el username.
 #### URL:
 
 ```
-https://api.com/teach-and-learn-v1/user/
+https://api.com/teach-and-learn-v1/user/"id_user"
 ```
 
 #### Headers:
@@ -113,7 +113,7 @@ Para estudiantes:
 {
     username: MiNombreDeEjemplo
     password: ContraseniaEjemplo
-    typeuser: student
+    typeUser: student
 }
 ```
 
@@ -123,7 +123,7 @@ Para profesores:
 {
     username: MiNombreDeEjemplo
     password: ContraseniaEjemplo
-    typeuser: teacher
+    typeUser: teacher
 }
 ```
 
@@ -154,7 +154,7 @@ Obtiene la información del todos los usuarios.
 #### URL:
 
 ```
-https://api.com/teach-and-learn-v1/user/all
+https://api.com/teach-and-learn-v1/user
 ```
 
 #### Parameters:
@@ -243,7 +243,7 @@ https://api.com/teach-and-learn-v1/user/"id_user"
     username: MiNombreDeEjemplo
     email: EmailEjemplo
     password: ContraseniaEjemplo
-    typeuser: student
+    typeUser: student
 }
 ```
 
@@ -377,7 +377,7 @@ Obtiene la información de todas las lecciones.
 
 #### URL:
 ```
-https://api.com/teach-and-learn-v1/lesson"
+https://api.com/teach-and-learn-v1/lesson
 ```
 
 #### Parameters:
@@ -737,26 +737,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire
 ```
 {
     activityname: MiNameActivity
-    question1: ¿Como se escribe verde en ingles?
-    response1: Green
-    question2: ¿Como se escribe amarillo en ingles?
-    response2: Yellow
-    question3: ¿Como se escribe rojo en ingles?
-    response3: Red
-    question4: ¿Como se escribe negro en ingles?
-    response4: Black
-    question5: ¿Como se escribe blanco en ingles?
-    response5: White
-    question6: ¿Como se escribe gris en ingles?
-    response6: Gray
-    question7: ¿Como se escribe anaranjado en ingles?
-    response7: Orange
-    question8: ¿Como se escribe azul en ingles?
-    response8: Blue
-    question9: ¿Como se escribe rosa en ingles?
-    response9: Pink
-    question10: ¿Como se escribe morado en ingles?
-    response10: Purple
+    question[]: arrayQuestion[]
 }
 ```
 
@@ -916,26 +897,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/"id_question
 ```
 {
     activityname: MiNameActivity
-    question1: ¿Como se escribe verde en ingles?
-    response1: Green
-    question2: ¿Como se escribe amarillo en ingles?
-    response2: Yellow
-    question3: ¿Como se escribe rojo en ingles?
-    response3: Red
-    question4: ¿Como se escribe negro en ingles?
-    response4: Black
-    question5: ¿Como se escribe blanco en ingles?
-    response5: White
-    question6: ¿Como se escribe gris en ingles?
-    response6: Gray
-    question7: ¿Como se escribe anaranjado en ingles?
-    response7: Orange
-    question8: ¿Como se escribe azul en ingles?
-    response8: Blue
-    question9: ¿Como se escribe rosa en ingles?
-    response9: Pink
-    question10: ¿Como se escribe morado en ingles?
-    response10: Purple
+    question[]: arrayQuestion[]
 }
 ```
 
@@ -961,9 +923,9 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/"id_question
 }
 ```
 
-## Entidad cuestionario de opción multiple.
+## Entidad question
 
-### Crear cuestionario de opción multiple.
+### Crear una pregunta.
 
 #### Method:
 
@@ -971,11 +933,11 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/"id_question
 
 #### Description
 
-Crea una nueva nueva actividad de tipo cuestionario de opción multiple.
+Crea una nueva pregunta para la actividad cuestionario.
 
 #### URL:
 ```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/question
 ```
 
 #### Headers:
@@ -987,37 +949,23 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions
 ```
 
 #### Body:
-
+- multipleChoise
 ```
 {
-    activityname: MiNameActivity
-    question1: ¿Como se escribe anaranjado en ingles?
-    optionresponse1a: Orange
-    optionresponse1b: Red
-    optionresponse1c: Blue
-    optionresponse1d: White
-    question2: ¿Como se escribe azul en ingles?
-    optionresponse2a: Blue
-    optionresponse2b: Black
-    optionresponse2c: yellow
-    optionresponse2d: Green
-    question3: ¿Como se escribe verde en ingles?
-    optionresponse3a: Blue
-    optionresponse3b: Green
-    optionresponse3c: Yellow
-    optionresponse3d: Blue
-    question4: ¿Como se escribe rojo en ingles?
-    optionresponse4a: Black
-    optionresponse4b: Purple
-    optionresponse4c: Orange
-    optionresponse4d: Red
-    question5: ¿Como se escribe negro en ingles?
-    optionresponse5a: Black
-    optionresponse5b: Red
-    optionresponse5c: Blue
-    optionresponse5d: Yellow
+        question: ¿Como se escribe amarrillo?
+        type: multipleChoise 
+        options: [Yellow, Black, Red, Blue]
+        correctOption: 1
 }
 ```
+- openAnswer
+{
+        question: ¿Como se escribe amarrillo?
+        type: openAnswer
+        options: [Yellow]
+        correctOption: 1
+}
+
 
 #### Response:
 
@@ -1035,8 +983,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions
 }
 ```
 
-### Obtener información de cuestionario opción multiple.
-
+### Obtener información de una pregunta
 #### Method:
 
 "Get"
@@ -1047,7 +994,7 @@ Obtiene la información de la actividad de tipo cuestionario de opción multiple
 
 #### URL:
 ```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/"id_multiple_questions"
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/question/"id_question"
 ```
 
 #### Headers:
@@ -1074,7 +1021,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/"id_mul
 }
 ```
 
-### Obtener información de todos los cuestionario opción multiple.
+### Obtener información de todas las preguntas.
 
 #### Method:
 
@@ -1082,11 +1029,11 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/"id_mul
 
 #### Description
 
-Obtiene la información de la actividad de tipo cuestionario de opción multiple.
+Obtiene la información de todas las preguntas.
 
 #### URL:
 ```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/all
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/question
 ```
 
 #### Parameters:
@@ -1120,7 +1067,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/all
 }
 ```
 
-### Eliminar un cuestionario opción multiple
+### Eliminar una pregunta.
 
 ##### Method:
 
@@ -1128,12 +1075,12 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/all
 
 #### Description
 
-Elimina la información de un cuestionario opción multiple.
+Elimina la información de una pregunta.
 
 #### URL:
 
 ```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/"id_multiple_questions"
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/question
 ```
 #### Headers:
 ```
@@ -1155,7 +1102,7 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/"id_mul
 }
 ```
 
-### Actualizar un cuestionario
+### Actualizar una pregunta.
 
 ##### Method:
 
@@ -1163,47 +1110,31 @@ https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/"id_mul
 
 #### Description
 
-Actualiza la información de un cuestionario opción multiple.
+Actualiza la información de una pregunta.
 
 #### URL:
 
 ```
-https://api.com/teach-and-learn-v1/lesson/"id_lesson"/multiple_questions/"id_multiple_questions"
+https://api.com/teach-and-learn-v1/lesson/"id_lesson"/questionnaire/question
 ```
 
-#### Body
-
-
+#### Body:
+- multipleChoise
 ```
 {
-    activityname: MiNameActivity
-    question1: ¿Como se escribe anaranjado en ingles?
-    optionresponse1a: Orange
-    optionresponse1b: Red
-    optionresponse1c: Blue
-    optionresponse1d: White
-    question2: ¿Como se escribe azul en ingles?
-    optionresponse2a: Blue
-    optionresponse2b: Black
-    optionresponse2c: yellow
-    optionresponse2d: Green
-    question3: ¿Como se escribe verde en ingles?
-    optionresponse3a: Blue
-    optionresponse3b: Green
-    optionresponse3c: Yellow
-    optionresponse3d: Blue
-    question4: ¿Como se escribe rojo en ingles?
-    optionresponse4a: Black
-    optionresponse4b: Purple
-    optionresponse4c: Orange
-    optionresponse4d: Red
-    question5: ¿Como se escribe negro en ingles?
-    optionresponse5a: Black
-    optionresponse5b: Red
-    optionresponse5c: Blue
-    optionresponse5d: Yellow
+        question: ¿Como se escribe amarrillo?
+        type: multipleChoise 
+        options: [Yellow, Black, Red, Blue]
+        correctOption: 1
 }
 ```
+- openAnswer
+{
+        question: ¿Como se escribe amarrillo?
+        type: openAnswer
+        options: [Yellow]
+        correctOption: 1
+}
 
 #### Headers:
 ```
