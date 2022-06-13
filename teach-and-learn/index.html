@@ -59,7 +59,7 @@
     username: MiNombreDeEjemplo
     email: EmailEjemplo
     password: ContraseniaEjemplo
-    typeuser: student
+    typeUser: student
 }
 </code></pre>
 <p>Para profesores:</p>
@@ -91,7 +91,7 @@
 <h3 is-upgraded>Description</h3>
 <p>Obtiene la información del usuario con el username.</p>
 <h3 is-upgraded>URL:</h3>
-<pre><code>https://api.com/teach-and-learn-v1/user/
+<pre><code>https://api.com/teach-and-learn-v1/user/&#34;id_user&#34;
 </code></pre>
 <h3 is-upgraded>Headers:</h3>
 <pre><code>{   
@@ -103,14 +103,14 @@
 <pre><code>{
     username: MiNombreDeEjemplo
     password: ContraseniaEjemplo
-    typeuser: student
+    typeUser: student
 }
 </code></pre>
 <p>Para profesores:</p>
 <pre><code>{
     username: MiNombreDeEjemplo
     password: ContraseniaEjemplo
-    typeuser: teacher
+    typeUser: teacher
 }
 </code></pre>
 <h3 is-upgraded>Response</h3>
@@ -134,7 +134,7 @@
 <h3 is-upgraded>Description</h3>
 <p>Obtiene la información del todos los usuarios.</p>
 <h3 is-upgraded>URL:</h3>
-<pre><code>https://api.com/teach-and-learn-v1/user/all
+<pre><code>https://api.com/teach-and-learn-v1/user
 </code></pre>
 <h3 is-upgraded>Parameters:</h3>
 <pre><code>{
@@ -203,7 +203,7 @@
     username: MiNombreDeEjemplo
     email: EmailEjemplo
     password: ContraseniaEjemplo
-    typeuser: student
+    typeUser: student
 }
 </code></pre>
 <h3 is-upgraded>Headers:</h3>
@@ -307,7 +307,7 @@
 <h3 is-upgraded>Description</h3>
 <p>Obtiene la información de todas las lecciones.</p>
 <h3 is-upgraded>URL:</h3>
-<pre><code>https://api.com/teach-and-learn-v1/lesson&#34;
+<pre><code>https://api.com/teach-and-learn-v1/lesson
 </code></pre>
 <h3 is-upgraded>Parameters:</h3>
 <pre><code>{
@@ -589,26 +589,7 @@
 <h3 is-upgraded>Body:</h3>
 <pre><code>{
     activityname: MiNameActivity
-    question1: ¿Como se escribe verde en ingles?
-    response1: Green
-    question2: ¿Como se escribe amarillo en ingles?
-    response2: Yellow
-    question3: ¿Como se escribe rojo en ingles?
-    response3: Red
-    question4: ¿Como se escribe negro en ingles?
-    response4: Black
-    question5: ¿Como se escribe blanco en ingles?
-    response5: White
-    question6: ¿Como se escribe gris en ingles?
-    response6: Gray
-    question7: ¿Como se escribe anaranjado en ingles?
-    response7: Orange
-    question8: ¿Como se escribe azul en ingles?
-    response8: Blue
-    question9: ¿Como se escribe rosa en ingles?
-    response9: Pink
-    question10: ¿Como se escribe morado en ingles?
-    response10: Purple
+    question[]: arrayQuestion[]
 }
 </code></pre>
 <h3 is-upgraded>Response:</h3>
@@ -727,26 +708,7 @@
 <h3 is-upgraded>Body</h3>
 <pre><code>{
     activityname: MiNameActivity
-    question1: ¿Como se escribe verde en ingles?
-    response1: Green
-    question2: ¿Como se escribe amarillo en ingles?
-    response2: Yellow
-    question3: ¿Como se escribe rojo en ingles?
-    response3: Red
-    question4: ¿Como se escribe negro en ingles?
-    response4: Black
-    question5: ¿Como se escribe blanco en ingles?
-    response5: White
-    question6: ¿Como se escribe gris en ingles?
-    response6: Gray
-    question7: ¿Como se escribe anaranjado en ingles?
-    response7: Orange
-    question8: ¿Como se escribe azul en ingles?
-    response8: Blue
-    question9: ¿Como se escribe rosa en ingles?
-    response9: Pink
-    question10: ¿Como se escribe morado en ingles?
-    response10: Purple
+    question[]: arrayQuestion[]
 }
 </code></pre>
 <h3 is-upgraded>Headers:</h3>
@@ -774,14 +736,14 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Entidad cuestionario de opción multiple." duration="0">
-        <h2 is-upgraded>Crear cuestionario de opción multiple.</h2>
+      <google-codelab-step label="Entidad question" duration="0">
+        <h2 is-upgraded>Crear una pregunta.</h2>
 <h3 is-upgraded>Method:</h3>
 <p>&#34;Post&#34;</p>
 <h3 is-upgraded>Description</h3>
-<p>Crea una nueva nueva actividad de tipo cuestionario de opción multiple.</p>
+<p>Crea una nueva pregunta para la actividad cuestionario.</p>
 <h3 is-upgraded>URL:</h3>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire/question
 </code></pre>
 <h3 is-upgraded>Headers:</h3>
 <pre><code>{
@@ -790,35 +752,19 @@
 }
 </code></pre>
 <h3 is-upgraded>Body:</h3>
+<ul>
+<li>multipleChoise</li>
+</ul>
 <pre><code>{
-    activityname: MiNameActivity
-    question1: ¿Como se escribe anaranjado en ingles?
-    optionresponse1a: Orange
-    optionresponse1b: Red
-    optionresponse1c: Blue
-    optionresponse1d: White
-    question2: ¿Como se escribe azul en ingles?
-    optionresponse2a: Blue
-    optionresponse2b: Black
-    optionresponse2c: yellow
-    optionresponse2d: Green
-    question3: ¿Como se escribe verde en ingles?
-    optionresponse3a: Blue
-    optionresponse3b: Green
-    optionresponse3c: Yellow
-    optionresponse3d: Blue
-    question4: ¿Como se escribe rojo en ingles?
-    optionresponse4a: Black
-    optionresponse4b: Purple
-    optionresponse4c: Orange
-    optionresponse4d: Red
-    question5: ¿Como se escribe negro en ingles?
-    optionresponse5a: Black
-    optionresponse5b: Red
-    optionresponse5c: Blue
-    optionresponse5d: Yellow
+        question: ¿Como se escribe amarrillo?
+        type: multipleChoise 
+        options: [Yellow, Black, Red, Blue]
+        correctOption: 1
 }
 </code></pre>
+<ul>
+<li>openAnswer { question: ¿Como se escribe amarrillo? type: openAnswer options: [Yellow] correctOption: 1 }</li>
+</ul>
 <h3 is-upgraded>Response:</h3>
 <ul>
 <li>200</li>
@@ -834,13 +780,13 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
-<h2 is-upgraded>Obtener información de cuestionario opción multiple.</h2>
+<h2 is-upgraded>Obtener información de una pregunta</h2>
 <h3 is-upgraded>Method:</h3>
 <p>&#34;Get&#34;</p>
 <h3 is-upgraded>Description</h3>
 <p>Obtiene la información de la actividad de tipo cuestionario de opción multiple.</p>
 <h3 is-upgraded>URL:</h3>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions/&#34;id_multiple_questions&#34;
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire/question/&#34;id_question&#34;
 </code></pre>
 <h3 is-upgraded>Headers:</h3>
 <pre><code>{
@@ -862,13 +808,13 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
-<h2 is-upgraded>Obtener información de todos los cuestionario opción multiple.</h2>
+<h2 is-upgraded>Obtener información de todas las preguntas.</h2>
 <h3 is-upgraded>Method:</h3>
 <p>&#34;Get&#34;</p>
 <h3 is-upgraded>Description</h3>
-<p>Obtiene la información de la actividad de tipo cuestionario de opción multiple.</p>
+<p>Obtiene la información de todas las preguntas.</p>
 <h3 is-upgraded>URL:</h3>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions/all
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire/question
 </code></pre>
 <h3 is-upgraded>Parameters:</h3>
 <pre><code>{
@@ -896,13 +842,13 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
-<h2 is-upgraded>Eliminar un cuestionario opción multiple</h2>
+<h2 is-upgraded>Eliminar una pregunta.</h2>
 <h4 is-upgraded>Method:</h4>
 <p>&#34;Delete&#34;</p>
 <h3 is-upgraded>Description</h3>
-<p>Elimina la información de un cuestionario opción multiple.</p>
+<p>Elimina la información de una pregunta.</p>
 <h3 is-upgraded>URL:</h3>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions/&#34;id_multiple_questions&#34;
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire/question
 </code></pre>
 <h3 is-upgraded>Headers:</h3>
 <pre><code>{
@@ -924,44 +870,28 @@
         &#34;message&#34;: &#34;Invalid request&#34;
 }
 </code></pre>
-<h2 is-upgraded>Actualizar un cuestionario</h2>
+<h2 is-upgraded>Actualizar una pregunta.</h2>
 <h4 is-upgraded>Method:</h4>
 <p>&#34;Put&#34;</p>
 <h3 is-upgraded>Description</h3>
-<p>Actualiza la información de un cuestionario opción multiple.</p>
+<p>Actualiza la información de una pregunta.</p>
 <h3 is-upgraded>URL:</h3>
-<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/multiple_questions/&#34;id_multiple_questions&#34;
+<pre><code>https://api.com/teach-and-learn-v1/lesson/&#34;id_lesson&#34;/questionnaire/question
 </code></pre>
-<h3 is-upgraded>Body</h3>
+<h3 is-upgraded>Body:</h3>
+<ul>
+<li>multipleChoise</li>
+</ul>
 <pre><code>{
-    activityname: MiNameActivity
-    question1: ¿Como se escribe anaranjado en ingles?
-    optionresponse1a: Orange
-    optionresponse1b: Red
-    optionresponse1c: Blue
-    optionresponse1d: White
-    question2: ¿Como se escribe azul en ingles?
-    optionresponse2a: Blue
-    optionresponse2b: Black
-    optionresponse2c: yellow
-    optionresponse2d: Green
-    question3: ¿Como se escribe verde en ingles?
-    optionresponse3a: Blue
-    optionresponse3b: Green
-    optionresponse3c: Yellow
-    optionresponse3d: Blue
-    question4: ¿Como se escribe rojo en ingles?
-    optionresponse4a: Black
-    optionresponse4b: Purple
-    optionresponse4c: Orange
-    optionresponse4d: Red
-    question5: ¿Como se escribe negro en ingles?
-    optionresponse5a: Black
-    optionresponse5b: Red
-    optionresponse5c: Blue
-    optionresponse5d: Yellow
+        question: ¿Como se escribe amarrillo?
+        type: multipleChoise 
+        options: [Yellow, Black, Red, Blue]
+        correctOption: 1
 }
 </code></pre>
+<ul>
+<li>openAnswer { question: ¿Como se escribe amarrillo? type: openAnswer options: [Yellow] correctOption: 1 }</li>
+</ul>
 <h3 is-upgraded>Headers:</h3>
 <pre><code>{
     &#39;Content-Type&#39;: &#39;application/json&#39;
