@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Para Chrome, Safari, Edge */
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 24px; /* Increase the height */
+    width: 24px; /* Increase the width */
+    background: url('data:image/svg+xml;utf8,<svg fill="%23FDB623" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>') center/contain no-repeat;
+}
+
+/* Para IE */
+input[type="search"]::-ms-clear {
+    width: 24px; /* Increase the width */
+    height: 24px; /* Increase the height */
+    background: url('data:image/svg+xml;utf8,<svg fill="%23FDB623" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>') center/contain no-repeat;
+}
